@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+jar {
+    baseName = 'this-counts-ms'
+    version =  '0.0.1'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+	compile('com.h2database:h2')
+    compile('com.google.guava:guava:21.0')
+    compile('org.projectlombok:lombok:1.16.14')
+    compile('org.springframework.boot:spring-boot-devtools:2.0.0.RELEASE')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa:2.0.0.RELEASE')
+	compile('org.springframework.boot:spring-boot-starter-jersey:2.0.0.RELEASE')
+	compile('org.springframework.boot:spring-boot-starter-tomcat:2.0.0.RELEASE')
+    compile('org.springframework.boot:spring-boot-starter-web:2.0.0.RELEASE')
+    
+    // This one helps to get to know the health of your service
+    // curl localhost:8080/actuator/health
+    compile('org.springframework.boot:spring-boot-starter-actuator:2.0.0.RELEASE')
+    
+	compile('io.springfox:springfox-swagger2:2.6.0')
+	compile('io.springfox:springfox-swagger-ui:2.6.0')
+    
+    testCompile('junit:junit:4.12')
+    testCompile('org.mockito:mockito-all:1.8.4'
+    testCompile('org.hibernate:hibernate-testing:5.1.0.Final')
+ 	testCompile('org.springframework.boot:spring-boot-starter-test:2.0.0.RELEASE')
+    //testCompile('org.springframework.cloud:spring-cloud-stream-test-support')
+}
+
+bootRun {
+    systemProperties = System.properties
+}
