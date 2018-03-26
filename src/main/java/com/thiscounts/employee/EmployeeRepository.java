@@ -32,6 +32,6 @@ public interface EmployeeRepository {
 	 * @param discount
 	 * @return
 	 */
-	List<Employee> listAll(Company discount);
+	List<Employee> listAll(Company company);
 
 }

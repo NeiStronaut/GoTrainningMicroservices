@@ -2,9 +2,6 @@ package com.thiscounts.discount;
 
 import java.util.List;
 
-import com.thiscounts.company.Company;
-import com.thiscounts.employee.Employee;
-
 public interface DiscountController {
 
 	/**
@@ -51,16 +48,16 @@ public interface DiscountController {
 	
 	/**
 	 * 
-	 * @param company
+	 * @param companyId
 	 * @return
 	 */
-	List<CompanyDiscount> listAll(Company company);
+	List<CompanyDiscount> listAllCompanyDiscounts(long companyId);
 	
 	/**
 	 * 
-	 * @param employee
+	 * @param employeeId
 	 * @return
 	 */
-	List<CompanyDiscount> listAll(Employee employee);
+	List<CompanyDiscount> listAllEmployeeDiscounts(long employeeId);
 	
 }

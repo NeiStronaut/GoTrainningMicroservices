@@ -13,6 +13,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "TBL_COMPANY_DISCOUNT")
+@SuppressWarnings("unused")
 public class CompanyDiscount {
 
     @Id

@@ -1,6 +1,14 @@
 package com.thiscounts.login;
 
-public class LoginRepositoryImp implements LoginRepository {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public class LoginRepositoryBusiness implements LoginRepository {
+	
+	@Autowired
+	LoginRepositoryJpa jpaRepository;
 
 	@Override
 	public boolean login(String id, String hash) {
@@ -8,7 +16,7 @@ public class LoginRepositoryImp implements LoginRepository {
 	}
 
 	@Override
-	public boolean update(Login l) {
+	public boolean update(Login login) {
 		return false;
 	}
 

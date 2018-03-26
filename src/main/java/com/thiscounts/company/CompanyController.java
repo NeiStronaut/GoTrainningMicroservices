@@ -9,14 +9,14 @@ public interface CompanyController {
 	 * @param discount
 	 * @return
 	 */
-	boolean create(Company discount);	
+	boolean create(Company company);	
 	
 	/**
 	 * 
 	 * @param discount
 	 * @return
 	 */
-	boolean update(Company discount);
+	boolean update(Company company);
 	
 	/**
 	 * 

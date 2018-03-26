@@ -6,10 +6,17 @@ public interface DiscountRepository {
 
 	/**
 	 * 
-	 * @param e
+	 * @param discount
 	 * @return
 	 */
-	boolean create(Discount e);
+	boolean create(Discount discount);
+	
+	/**
+	 * 
+	 * @param discount
+	 * @return
+	 */
+	boolean update(Discount discount);
 	
 	/**
 	 * 
@@ -20,16 +27,37 @@ public interface DiscountRepository {
 	
 	/**
 	 * 
-	 * @param d
+	 * @param discount
 	 * @return
 	 */
-	boolean update(Discount d);
-	
+	List<Discount> listAll(Discount discount);	
+
 	/**
-	 * 
-	 * @param d
+	 * A company buys the discount that was bought
+	 * @param companyDiscount
 	 * @return
 	 */
-	List<Discount> listAll(Discount d);	
+	public boolean createCompanyDiscount(CompanyDiscount companyDiscount);
+
+	/**
+	 * A company changes the discount that was bought
+	 * @param companyDiscount
+	 * @return
+	 */
+	public boolean updateCompanyDiscount(CompanyDiscount companyDiscount);
+
+	/**
+	 * List all known discounts by the company
+	 * @param companyId
+	 * @return
+	 */
+	public List<CompanyDiscount> listAllCompanyDiscounts(long companyId);
+
+	/**
+	 * List all known discounts by the company of the employee
+	 * @param employeeId
+	 * @return
+	 */
+	public List<CompanyDiscount> listAllEmployeeDiscounts(long employeeId);
 	
 }
