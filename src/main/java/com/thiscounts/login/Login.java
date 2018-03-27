@@ -11,7 +11,6 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "TBL_VAULT")
-@SuppressWarnings("unused")
 public class Login {
 
     @Id

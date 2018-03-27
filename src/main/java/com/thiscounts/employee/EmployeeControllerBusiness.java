@@ -5,12 +5,16 @@ import java.util.List;
 import javax.ws.rs.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.thiscounts.company.Company;
 
+import org.springframework.stereotype.Service;
+
+@RefreshScope
 @RestController
 public class EmployeeControllerBusiness implements EmployeeController {
 	

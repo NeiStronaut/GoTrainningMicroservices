@@ -54,10 +54,10 @@ public interface DiscountRepository {
 	public List<CompanyDiscount> listAllCompanyDiscounts(long companyId);
 
 	/**
-	 * List all known discounts by the company of the employee
+	 * 
 	 * @param employeeId
 	 * @return
 	 */
-	public List<CompanyDiscount> listAllEmployeeDiscounts(long employeeId);
-	
+	List<CompanyDiscount> listAllEmployeeDiscounts(long employeeId);
+
 }

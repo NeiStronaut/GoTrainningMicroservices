@@ -11,7 +11,6 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "TBL_EMPLOYEE")
-@SuppressWarnings("unused")
 public class Employee {
 
     @Id
