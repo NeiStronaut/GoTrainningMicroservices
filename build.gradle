@@ -35,6 +35,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-tomcat:2.0.0.RELEASE')
     compile('org.springframework.boot:spring-boot-starter-web:2.0.0.RELEASE')
     
+    compile('org.springframework.cloud:spring-cloud-starter-eureka:1.0.0.RELEASE')
+    
     // This one helps to get to know the health of your service
     // curl localhost:8080/actuator/health
     compile('org.springframework.boot:spring-boot-starter-actuator:2.0.0.RELEASE')

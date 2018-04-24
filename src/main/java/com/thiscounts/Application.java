@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ApplicationContext;
@@ -12,13 +13,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.web.client.RestTemplate;
 
 
+@EnableDiscoveryClient
 @Configuration
 @ComponentScan("com.thiscounts")
 @EnableJpaRepositories("com.thiscounts")
 @EnableCircuitBreaker
-@EnableDiscoveryClient
 @SpringBootApplication
 public class Application {
 
@@ -39,6 +41,11 @@ public class Application {
             }
 
         };
+    }
+
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
     }
     
 }
